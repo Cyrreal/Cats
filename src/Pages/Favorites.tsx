@@ -1,17 +1,22 @@
-import type { Cats } from "../App";
-import { CardFav } from "../Components/CardFav";
+import type { Cat } from "../App";
+import { Card } from "../Components/Card";
 
 type PropTypes = {
-  favorites: Cats[];
-  deleteFavorites: (item: string) => void;
+  favorites: Cat[];
+  removeFromFavorites: (cat: Cat) => void;
 };
 
-export function Favorites({ favorites, deleteFavorites }: PropTypes) {
+export function Favorites({ favorites, removeFromFavorites }: PropTypes) {
   return (
     <div className="container">
       <div className="cat-grid">
-        {favorites.map((elem) => (
-          <CardFav {...elem} key={elem.id} deleteFavorites={deleteFavorites} />
+        {favorites.map((cat) => (
+          <Card
+            cat={cat}
+            key={cat.id}
+            isFavorite={true}
+            removeFromFavorites={removeFromFavorites}
+          />
         ))}
       </div>
     </div>

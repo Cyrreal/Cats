@@ -1,5 +1,6 @@
 .header-menu {
   display: flex;
+  flex-wrap: wrap;
   font-size: 14px;
   font-weight: 400;
   line-height: 21px;

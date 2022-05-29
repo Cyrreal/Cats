@@ -1,6 +1,7 @@
 .cat-grid {
   display: grid;
-  grid-template-columns: 225px 225px 225px 225px 225px;
+
+  grid-template-columns: repeat(auto-fill, 225px);
   gap: 48px;
   margin-top: 51px;
 }
@@ -19,9 +20,11 @@
   display: block;
   width: 225px;
   height: 225px;
+  object-fit: cover;
 }
 
-.btn {
+.btn,
+.licked {
   width: 40px;
   height: 35px;
   border: none;
@@ -30,17 +33,11 @@
   position: absolute;
   bottom: 20px;
   right: 14px;
+  cursor: pointer;
 }
 
 .licked {
-  width: 40px;
-  height: 35px;
-  border: none;
-  background-color: transparent;
   background-image: url("../../public/Liked.svg");
-  position: absolute;
-  bottom: 20px;
-  right: 14px;
 }
 
 .loader {

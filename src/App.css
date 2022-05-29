@@ -142,6 +142,8 @@ a {
 }
 
 .container {
-  max-width: 1316px;
+  max-width: 1380px;
   margin: 0 auto;
+  padding-left: 31px;
+  padding-right: 31px;
 }
