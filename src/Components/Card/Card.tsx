@@ -1,4 +1,5 @@
-import type { Cat } from "../App";
+import type { Cat } from "../../App";
+import s from "../Card/Card.module.css";
 type Props = {
   cat: Cat;
   isFavorite: boolean;
@@ -15,9 +16,9 @@ export function Card({
   const handleClick =
     addToFavorites && !isFavorite ? addToFavorites : removeFromFavorites;
   return (
-    <div className="grid-item">
+    <div className={s.item}>
       <img
-        className="img"
+        className={s.img}
         src={cat.url}
         width={cat.width}
         height={cat.height}
@@ -25,7 +26,7 @@ export function Card({
       />
       <button
         onClick={() => handleClick(cat)}
-        className={isFavorite ? "licked" : "btn"}
+        className={isFavorite ? `${s.liked}` : `${s.btn}`}
       ></button>
     </div>
   );

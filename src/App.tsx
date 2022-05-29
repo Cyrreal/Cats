@@ -1,5 +1,6 @@
 import "./App.css";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+import { Header } from "./Components/Header";
 import { Favorites } from "./Pages/Favorites";
 import { Home } from "./Pages/Home";
 import { useEffect, useState } from "react";
@@ -27,24 +28,12 @@ function App() {
   };
 
   useEffect(() => {
-    // localStorage.setItem('favorite-Cats',JSON.stringify(favorites));
     localStorage.favorites = JSON.stringify(favorites);
   }, [favorites]);
 
   return (
     <>
-      <header>
-        <div className="container">
-          <nav className="header-menu">
-            <p className="header-link_all">
-              <Link to="/">Все котики</Link>
-            </p>
-            <p className="header-link_fav">
-              <Link to="/favorites">Любимые котики</Link>
-            </p>
-          </nav>
-        </div>
-      </header>
+      <Header />
       <Routes>
         <Route
           path="/"
@@ -53,7 +42,6 @@ function App() {
               favorites={favorites}
               addToFavorites={addToFavorites}
               removeFromFavorites={removeFromFavorites}
-              // fetching={fetching}
             />
           }
         ></Route>

@@ -1,4 +1,11 @@
-.header-menu {
+.container {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding-left: 31px;
+  padding-right: 31px;
+}
+
+.menu {
   display: flex;
   flex-wrap: wrap;
   font-size: 14px;
@@ -7,7 +14,8 @@
   letter-spacing: 0.25px;
 }
 
-.header-link_all {
+.all {
+  color: #fff;
   width: 120px;
   height: 64px;
   display: flex;
@@ -15,10 +23,14 @@
   justify-content: center;
 }
 
-.header-link_fav {
+.fav {
   width: 173px;
   height: 64px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.link {
+  color: #fff;
 }

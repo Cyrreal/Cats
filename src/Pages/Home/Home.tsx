@@ -1,6 +1,7 @@
-import type { Cat } from "../App";
-import { Card } from "../Components/Card";
+import type { Cat } from "../../App";
+import { Card } from "../../Components/Card";
 import { useState, useEffect } from "react";
+import s from "../Home/Home.module.css";
 
 const API_URL = "https://api.thecatapi.com/v1/images/search";
 const API_KEY = "c2e35dca-e23e-41d2-a7a0-5f9ca44a3ba5";
@@ -23,7 +24,7 @@ export function Home({
   //Запрос котов с сервера
   useEffect(() => {
     setFetching(true);
-    fetch(`${API_URL}?limit=20&page=${currentPage}`, {
+    fetch(`${API_URL}?limit=25&page=${currentPage}`, {
       mode: "cors",
       headers: { "x-api-key": API_KEY },
     })
@@ -50,8 +51,8 @@ export function Home({
   };
 
   return (
-    <div className="container">
-      <div className="cat-grid">
+    <div className={s.container}>
+      <div className={s.grid}>
         {fetchData.map((cat, index) => (
           // В качестве ключа используем index так как в данных с API встречаются дубликаты
           <Card
@@ -63,7 +64,7 @@ export function Home({
           />
         ))}
       </div>
-      {fetching && <p className="loader">...загружаем котиков...</p>}
+      {fetching && <p className={s.loader}>...загружаем котиков...</p>}
     </div>
   );
 }
