@@ -1,0 +1,23 @@
+.header-menu {
+  display: flex;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: 0.25px;
+}
+
+.header-link_all {
+  width: 120px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-link_fav {
+  width: 173px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
